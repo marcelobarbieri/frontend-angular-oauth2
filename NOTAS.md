@@ -53,3 +53,18 @@ ng generate component profile
 - [Instruções para registrar um aplicativo de página única](https://learn.microsoft.com/pt-br/azure/active-directory/develop/scenario-spa-app-registration) no portal do Azure
 - Na página Visão geral do aplicativo do seu registro, anote o valor da ID do aplicativo (cliente) para uso posterior
 - Registre o valor do URI de Redirecionamento como http://localhost:4200/ e digite-o como 'SPA'
+
+# Configurar a aplicação
+
+1. Na pasta *src/app*, edite o *app.module.ts* e adicione **MsalModule** e **MsalInterceptor** a **imports**, bem como a constante **isIE**. Seu código deve ficar assim:
+
+|Nome do valor||Sobre o|
+|---|---|---|
+|clientId||Na página **Visão Geral** do seu registro de aplicativo, esta é seu valor **ID do Aplicativo (cliente)** .|
+|authority¹|Instância da nuvem|Essa é a instância da nuvem do Azure. Para a nuvem principal ou global do Azure, insira https://login.microsoftonline.com. Para nuvens nacionais (por exemplo, China), confira [Nuvens nacionais](https://learn.microsoft.com/pt-br/azure/active-directory/develop/authentication-national-cloud).|
+|authority¹|Tenant Info|Defina como uma das seguintes opções: Se o aplicativo der suporte a contas neste diretório organizacional, substitua esse valor pela ID do diretório (locatário) ou pelo nome do locatário (por exemplo, **contoso.microsoft.com**). Se o aplicativo for compatível com as contas em qualquer diretório organizacional, substitua esse valor por **organizações**. Se o seu aplicativo for compatível com as contas em qualquer diretório organizacional e contas pessoais da Microsoft, substitua esse valor por **comum**. Para restringir o suporte a contas pessoais da Microsoft, substitua esse valor por **consumidores**.|
+|redirectUri||Substitua por http://localhost:4200 .|
+
+> Para saber mais sobre opções configuráveis disponíveis, confira [Inicializar aplicativos cliente](https://learn.microsoft.com/pt-br/azure/active-directory/develop/msal-js-initializing-client-applications).
+
+2. Adicione rotas aos componentes inicial e de perfil em *src/app/app-routing.module.ts*. 
