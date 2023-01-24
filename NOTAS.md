@@ -142,3 +142,11 @@ Modifique os valores no **protectedResourceMap**, conforme descrito aqui:
 2. Substitua o código em *src/app/profile/profile.component.ts* para recuperar o perfil de um usuário com uma solicitação HTTP.
 
 3. Substitua a interface do usuário em *src/app/profile/profile.component.html* para exibir as informações de perfil.
+
+# Sair
+
+Atualize o código em *src/app/app.component.html* para exibir condicionalmente um botão Logout.
+
+## Sair do serviço usando redirecionamentos
+
+Atualize o código em *src/app/app.component.ts* para desconectar um usuário usando redirecionamentos.
