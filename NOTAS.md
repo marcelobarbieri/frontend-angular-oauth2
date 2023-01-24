@@ -68,3 +68,21 @@ ng generate component profile
 > Para saber mais sobre opções configuráveis disponíveis, confira [Inicializar aplicativos cliente](https://learn.microsoft.com/pt-br/azure/active-directory/develop/msal-js-initializing-client-applications).
 
 2. Adicione rotas aos componentes inicial e de perfil em *src/app/app-routing.module.ts*. 
+
+# Substituir a interface do usuário base
+
+1. Substitua o código de espaço reservado em *src/app/app.component.html*
+
+2. Adicione módulos materiais a *src/app/app.module.ts*. O **AppModule**
+
+3. (OPCIONAL) Adicione o CSS a src/style.css
+
+4. (OPCIONAL) Adicione o CSS a src/app/app.component.css
+
+# Conectar um usuário
+
+Adicione o código das seguintes seções para invocar o logon usando uma janela pop-up ou um redirecionamento de quadro completo:
+
+## Entrar usando pop-ups
+
+1. Altere o código em *src/app/app.component.ts* para conectar um usuário usando uma janela pop-up.
