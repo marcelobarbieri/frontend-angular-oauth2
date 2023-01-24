@@ -86,3 +86,13 @@ Adicione o código das seguintes seções para invocar o logon usando uma janela
 ## Entrar usando pop-ups
 
 1. Altere o código em *src/app/app.component.ts* para conectar um usuário usando uma janela pop-up.
+
+## Conectar-se usando redirecionamentos
+
+1. Atualize *src/app/app.module.ts* para inicializar o **MsalRedirectComponent**. Este é um componente de redirecionamento dedicado que tratará os redirecionamentos. 
+
+2. Adicione o seletor **\<app-redirect\>** a *src/index.html*. Esse seletor é usado pelo **MsalRedirectComponent**. 
+
+3. Substitua o código em *src/app/app.component.ts* para conectar um usuário usando um redirecionamento de quadro completo.
+
+4. Substitua o código existente em *src/app/home/home.component.ts* para assinar o evento **LOGIN_SUCCESS**. Isso permitirá que você acesse o resultado do logon bem-sucedido com o redirecionamento. 

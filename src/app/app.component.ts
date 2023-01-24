@@ -18,14 +18,7 @@ export class AppComponent implements OnInit {
   }
 
   login() {
-    this.authService.loginPopup()
-      .subscribe({
-        next: (result) => {
-          console.log(result);
-          this.setLoginDisplay();
-        },
-        error: (error) => console.log(error)
-      });
+    this.authService.loginRedirect();
   }
 
   setLoginDisplay() {
