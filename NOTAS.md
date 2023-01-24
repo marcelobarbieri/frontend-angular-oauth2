@@ -168,7 +168,7 @@ npm start
 
 ![](./assets/angular-01-not-signed-in.png)
 
-# Fornecer autorização para acesso de aplicativo
+## Fornecer autorização para acesso de aplicativo
 
 Na primeira vez que começar a entrar no aplicativo, você deverá permitir acesso ao seu perfil e permitir que ele conecte você:
 
@@ -177,3 +177,9 @@ Na primeira vez que começar a entrar no aplicativo, você deverá permitir aces
 Se você consentir com as permissões solicitadas, o aplicativo Web mostrará uma página de logon bem-sucedida:
 
 ![](./assets/angular-02-signed-in.png)
+
+## Chamar a API do Graph
+
+Depois de entrar, selecione Perfil para ver as informações do perfil do usuário retornadas na resposta da chamada à API do Microsoft Graph:
+
+![](./assets/angular-03-profile-data.png)
