@@ -96,3 +96,13 @@ Adicione o código das seguintes seções para invocar o logon usando uma janela
 3. Substitua o código em *src/app/app.component.ts* para conectar um usuário usando um redirecionamento de quadro completo.
 
 4. Substitua o código existente em *src/app/home/home.component.ts* para assinar o evento **LOGIN_SUCCESS**. Isso permitirá que você acesse o resultado do logon bem-sucedido com o redirecionamento. 
+
+# Renderização Condicional
+
+Para renderizar uma interface do usuário somente para usuários autenticados, os componentes precisam assinar o **MsalBroadcastService** para ver se os usuários se conectaram e se a interação foi concluída.
+
+1. Adicione o **MsalBroadcastService** a *src/app/app.component.ts* e assine o **inProgress$** observável para verificar se a interação foi concluída e se uma conta está conectada antes de renderizar a interface do usuário. 
+
+2. Atualize o código em *src/app/home/home.component.ts* para também verificar se a interação deve ser concluída antes da atualização da interface do usuário. 
+
+3. Substitua o código em *src/app/home/home.component.html*
