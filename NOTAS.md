@@ -183,3 +183,11 @@ Se você consentir com as permissões solicitadas, o aplicativo Web mostrará um
 Depois de entrar, selecione Perfil para ver as informações do perfil do usuário retornadas na resposta da chamada à API do Microsoft Graph:
 
 ![](./assets/angular-03-profile-data.png)
+
+# Adicionar escopos e permissões delegadas
+
+A API do Microsoft Graph requer o escopo *User.Read* para ler o perfil do usuário. O escopo *User.Read* é adicionado automaticamente a todos os registros de aplicativo criados no portal do Azure. Outras APIs do Microsoft Graph, bem como APIs personalizadas do servidor de back-end, podem exigir escopos adicionais. Por exemplo, a API do Microsoft Graph requer o escopo *Mail.Read* para listar o email do usuário.
+
+À medida que você adiciona escopos, os usuários podem ser solicitados a fornecer consentimento adicional para os escopos adicionados.
+
+Talvez o usuário precise fornecer autorizações adicionais à medida que o número de escopos aumentar.
