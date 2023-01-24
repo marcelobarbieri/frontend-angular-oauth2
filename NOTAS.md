@@ -154,3 +154,16 @@ Atualize o código em *src/app/app.component.ts* para desconectar um usuário us
 ## Sair usando pop-ups
 
 Atualize o código em *src/app/app.component.ts* para desconectar um usuário usando pop-ups.
+
+# Testar seu código
+
+1. Inicie o servidor Web para escutar a porta executando os seguintes comandos em um prompt de linha de comando na pasta do aplicativo:
+
+```ps
+npm install
+npm start
+```
+
+2. No seu navegador, digite http://localhost:4200 ou http://localhost:{port}, em que port é a porta que o servidor Web está escutando. Você verá uma página semelhante à mostrada abaixo.
+
+![](./assets/angular-01-not-signed-in.png)
