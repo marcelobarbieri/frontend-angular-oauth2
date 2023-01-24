@@ -118,3 +118,27 @@ A MSAL Angular fornece o **MsalGuard**, uma classe que você pode usar para prot
 2. Defina o MsalGuard nas rotas que deseja proteger em *src/app/app-routing.module.ts*
 
 3. Ajuste as chamadas de logon em *src/app/app.component.ts* para levar em conta o **authRequest** definido nas configurações de proteção. 
+
+# Adquirir um token
+
+## Interceptor Angular
+
+A MSAL Angular fornece uma classe **Interceptor** que adquire automaticamente tokens para solicitações de saída que usam o cliente **http** do Angular para recursos protegidos conhecidos.
+
+1. Adicione a classe **Interceptor** como um provedor ao seu aplicativo em *src/app/app.module.ts*, com as respectivas configurações. 
+
+Os recursos protegidos são fornecidos como um **protectedResourceMap**. As URLs fornecidas na coleção **protectedResourceMap** diferenciam maiúsculas de minúsculas. Para cada recurso, adicione os escopos solicitados para retorno no token de acesso.
+
+Por exemplo:
+- **["user.read"]** para Microsoft Graph
+- **["\<Application ID URL\>/scope"]** para APIs Web personalizadas (ou seja, **api://\<Application ID\>/access_as_user**)
+
+Modifique os valores no **protectedResourceMap**, conforme descrito aqui:
+
+|Nome do valor|Sobre o|
+|---|---|
+|**Enter_the_Graph_Endpoint_Here**|A instância da API do Microsoft Graph com a qual o aplicativo deve se comunicar. Para o ponto de extremidade **global** da API do Microsoft Graph, substitua as duas instâncias dessa cadeia de caracteres por https://graph.microsoft.com. Para pontos de extremidade em implantações de nuvens **nacionais**, confira [Implantações de nuvens nacionais](https://learn.microsoft.com/pt-br/graph/deployments) na documentação do Microsoft Graph.|
+
+2. Substitua o código em *src/app/profile/profile.component.ts* para recuperar o perfil de um usuário com uma solicitação HTTP.
+
+3. Substitua a interface do usuário em *src/app/profile/profile.component.html* para exibir as informações de perfil.
