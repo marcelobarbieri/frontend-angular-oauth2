@@ -167,3 +167,13 @@ npm start
 2. No seu navegador, digite http://localhost:4200 ou http://localhost:{port}, em que port é a porta que o servidor Web está escutando. Você verá uma página semelhante à mostrada abaixo.
 
 ![](./assets/angular-01-not-signed-in.png)
+
+# Fornecer autorização para acesso de aplicativo
+
+Na primeira vez que começar a entrar no aplicativo, você deverá permitir acesso ao seu perfil e permitir que ele conecte você:
+
+![](./assets/spa-02-consent-dialog.png)
+
+Se você consentir com as permissões solicitadas, o aplicativo Web mostrará uma página de logon bem-sucedida:
+
+![](./assets/angular-02-signed-in.png)
