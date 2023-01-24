@@ -150,3 +150,7 @@ Atualize o código em *src/app/app.component.html* para exibir condicionalmente 
 ## Sair do serviço usando redirecionamentos
 
 Atualize o código em *src/app/app.component.ts* para desconectar um usuário usando redirecionamentos.
+
+## Sair usando pop-ups
+
+Atualize o código em *src/app/app.component.ts* para desconectar um usuário usando pop-ups.
