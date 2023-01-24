@@ -106,3 +106,15 @@ Para renderizar uma interface do usuário somente para usuários autenticados, o
 2. Atualize o código em *src/app/home/home.component.ts* para também verificar se a interação deve ser concluída antes da atualização da interface do usuário. 
 
 3. Substitua o código em *src/app/home/home.component.html*
+
+# Como proteger as rotas
+
+A MSAL Angular fornece o **MsalGuard**, uma classe que você pode usar para proteger rotas e exigir autenticação antes de acessar a rota protegida. As etapas abaixo adicionam o **MsalGuard** à rota **Profile**. A proteção da rota **Profile** significa que, mesmo que um usuário não se conecte usando o botão **Login**, se ele tentar acessar a rota **Profile** ou clicar no botão **Profile**, o **MsalGuard** solicitará que o usuário se autentique por meio do item pop-up ou do redirecionamento antes de mostrar a página **Profile**.
+
+**MsalGuard** é uma classe de conveniência que você pode usar para aprimorar a experiência do usuário, mas não deve ser usada para segurança. Os invasores podem contornar a proteção do lado do cliente, e você deve garantir que o servidor não retorne dados que o usuário não deve acessar.
+
+1. Adicione a classe **MsalGuard** como um provedor no seu aplicativo em *src/app/app.module.ts* e adicione as configurações para o **MsalGuard**. Os escopos necessários para adquirir tokens posteriormente podem ser fornecidos no **authRequest**, e o tipo de interação para o Guard pode ser definido como ou **Redirect** ou **Popup**.
+
+2. Defina o MsalGuard nas rotas que deseja proteger em *src/app/app-routing.module.ts*
+
+3. Ajuste as chamadas de logon em *src/app/app.component.ts* para levar em conta o **authRequest** definido nas configurações de proteção. 
